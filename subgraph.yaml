@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MyPaymaster
+    network: zksync-era-sepolia
+    source:
+      address: "0x145Ff8b31710B513725794A967B7c8f5990B98e5"
+      abi: MyPaymaster
+      startBlock: 4303856
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - SponsoredPaymasterTransaction
+      abis:
+        - name: MyPaymaster
+          file: ./abis/MyPaymaster.json
+      eventHandlers:
+        - event: SponsoredPaymasterTransaction(uint256,indexed address)
+          handler: handleSponsoredPaymasterTransaction
+      file: ./src/my-paymaster.ts

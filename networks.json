@@ -1,0 +1,8 @@
+{
+  "zksync-era-sepolia": {
+    "MyPaymaster": {
+      "address": "0x145Ff8b31710B513725794A967B7c8f5990B98e5",
+      "startBlock": 4303856
+    }
+  }
+}

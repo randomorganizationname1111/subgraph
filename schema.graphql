@@ -1,0 +1,8 @@
+type SponsoredPaymasterTransaction @entity(immutable: true) {
+  id: Bytes!
+  requiredEth: BigInt! # uint256
+  userAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
